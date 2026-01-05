@@ -1,0 +1,98 @@
+.container-fluid {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background:
+    radial-gradient(900px 420px at 50% 0%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.18) 35%,
+    rgba(255, 255, 255, 0.00) 70%),
+    
+    linear-gradient(180deg,
+    #d9f3ff 0%,
+    #a6d9ff 18%,
+    #5faeff 42%,
+    #2a74d6 62%,
+    #154b9a 78%,
+    #0b2a52 100%);
+}
+
+.section-form {
+    outline: 3px solid rgba(192, 219, 230, .95);
+    background: rgba(255, 255, 255, .94);
+    box-shadow:
+        0 26px 70px rgba(11, 42, 82, .30),
+        /* sombra grande */
+        0 10px 22px rgba(11, 42, 82, .18);
+    padding: 16px 16px 20px;
+    max-width: 576px;
+    border-radius: 12px;
+}
+
+.fieldset__legend {
+    font-size: 1.2rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.fieldset__field-style label,
+.fieldset__field-style input {
+    font-size: 1.1rem;
+}
+
+.fieldset__field-style input {
+    outline: 1px solid rgba(192, 219, 230, .95);
+    border-radius: 20px;
+    border: none;
+}
+
+.fieldset__field-style input:focus-visible {
+    outline: 2px solid #FDF064;
+    box-shadow: none;
+    box-shadow:
+    0 8px 18px rgba(11, 42, 82, .10),
+}
+
+.fieldset__button {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    font-size: 1.6rem;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C71C4;
+    outline: 3px solid #C0DBE6;
+    color: #FDF064;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow:
+        0 12px 22px rgba(11, 42, 82, .28);
+    transition: 0.2s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    transform: translateY(-2px);
+    outline-color: rgba(253, 240, 100, 0.7); // Como já tem 3px em .btn, aqui continua sendo 3px solid
+}
+
+.copy-right {
+    margin: 12px 0 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (width >= 576px) {
+    .btn {
+        width: 70%;
+    }
+}

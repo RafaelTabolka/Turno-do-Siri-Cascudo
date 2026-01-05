@@ -1,0 +1,23 @@
+:host {
+  // :host é o jeito do Angular (no CSS do componente) de dizer: “estou estilizando o elemento do próprio componente”. Ou seja, quando a página mudar, este estilo vai ser aplicado em seu css
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; //Garante: “no mínimo a altura da tela”. Se o conteúdo ficar maior que a tela, ele cresce e você consegue rolar normalmente.
+}
+
+.app-main {
+  flex: 1;
+  background:
+    radial-gradient(900px 420px at 50% 0%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.18) 35%,
+      rgba(255, 255, 255, 0.00) 70%),
+
+    linear-gradient(180deg,
+      #d9f3ff 0%,
+      #a6d9ff 18%,
+      #5faeff 42%,
+      #2a74d6 62%,
+      #154b9a 78%,
+      #0b2a52 100%);
+}
