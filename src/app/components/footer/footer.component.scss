@@ -1,0 +1,39 @@
+footer {
+    background: linear-gradient(180deg, #0B2A52 0%, #061A34 100%);
+    border-top: 1px solid rgba(192, 219, 230, .18);
+    box-shadow: 0 -12px 30px rgba(11, 42, 82, .35);
+    color: rgba(234, 247, 255, .85);
+    text-align: center;
+    padding: 8px;
+}
+
+footer p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    //   text-shadow: 0 0 10px rgba(253,240,100,.75);
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    color: #FDF064;
+}
+
+@media (width >= 576px) {
+    footer {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    footer p {
+        margin: 0;
+        border-right: 1px solid #CDAA18;
+        padding-right: 12px;
+    }
+
+    footer p:last-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}

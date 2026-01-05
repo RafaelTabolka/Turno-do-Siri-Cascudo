@@ -1,0 +1,236 @@
+<main tabindex="-1">
+    <div class="container">
+        <h2>Resumo de Pedidos</h2>
+        
+        <!-- Cards -->
+        <div class="cards-row row">
+
+            <div class="cards-row__card col-12 col-md-4">
+                <article class="cards-row__new-orders cards-row__article">
+                    <h3>Pedidos Novos</h3>
+                    <p class="cards-row__qty-by-status">3</p>
+                </article>
+            </div>
+
+            <div class="cards-row__card col-12 col-md-4">
+                <article class="cards-row__orders-in-preparation cards-row__article">
+                    <h3>Pedidos em Preparação</h3>
+                    <p class="cards-row__qty-by-status">3</p>
+                </article>
+            </div>
+
+            <div class="cards-row__card col-12 col-md-4">
+                <article class="cards-row__orders-delivered cards-row__article">
+                    <h3>Pedidos Entregues</h3>
+                    <p class="cards-row__qty-by-status">3</p>
+                </article>
+            </div>
+
+            <!-- <div class="cards-row__card col-12">
+                <p class="cards-row__total-qty">
+                    Total de Pedidos: <span>10</span>
+                </p>
+            </div> -->
+        </div>
+
+        <div class="row">
+            <!-- Filters -->
+            <div class="col-12 col-md-5 col-lg-4">
+                <section class="section-form">
+                    <form class="form">
+                        <h2 class="form__h2">Filtros</h2>
+
+                        <div class="form__field-style mb-3">
+                            <label for="clientName" class="form-label">Nome Cliente</label>
+                            <input type="text" class="form-control" id="clientName" name="clientName"
+                                placeholder="Ex: Patrick">
+                        </div>
+
+                        <div class="form__field-style">
+                            <label for="order-status" class="form-label">Status do Pedido</label>
+                            <select class="form-select" aria-label="Status do Pedido">
+                                <option selected disabled>Selecione</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="form__button mt-4">
+                            <button class="btn ">Aplicar Filtros</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Table -->
+            <div class="col-12 col-md-7 col-lg-8">
+                <section class="section-table">
+                    <h2>Tabela de Pedidos</h2>
+
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <!-- <caption class="caption-top"></caption> -->
+
+                            <thead>
+                                <tr>
+                                    <!-- <th scope="col">ID</th> -->
+                                    <th class="" scope="col">Cliente</th>
+                                    <th class="" scope="col">Status</th>
+                                    <th class="" scope="col">Ver/Editar</th>
+                                    <th class="" scope="col">Avançar</th>
+                                    <th class="" scope="col">Excluir</th>
+                                    <!-- <th class="" scope="col">Detalhes</th> -->
+                                </tr>
+                            </thead>
+
+                            <tbody class="table-group-divider">
+                                <tr>
+                                    <td>Patrick Estrela</td>
+                                    <td>Novo</td>
+
+                                    <td class="text-center">
+                                        <button routerLink="/order/list/1" type="button" class="tbody__style-img-edit">
+                                            <img src="/assets/img/img-order-list/img_edit.png" alt="Espátula ">
+                                        </button>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button class="tbody__style-img-advance">
+                                            <img src="/assets/img/img-order-list/img_new_order.png" alt="">
+                                        </button>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button class="tbody__style-img-trash">
+                                            <img src="/assets/img/img-order-list/img_trash.png" alt="">
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Siriguejo</td>
+                                    <td>Preparando</td>
+
+                                    <td class="text-center">
+                                        <button routerLink="/order/list/2" type="button" class="tbody__style-img-edit">
+                                            <img src="/assets/img/img-order-list/img_edit.png" alt="Espátula">
+                                        </button>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button class="tbody__style-img-advance">
+                                            <img src="/assets/img/img-order-list/img_oder_in_preparation.png"
+                                                alt="Avançar pedido">
+                                        </button>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button class="tbody__style-img-trash">
+                                            <img src="/assets/img/img-order-list/img_trash.png" alt="Lixeira">
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sandy Bochechas</td>
+                                    <td>Entregue</td>
+
+                                    <td class="text-center">
+                                        <button routerLink="/order/list/3" type="button" class="tbody__style-img-edit">
+                                            <img src="/assets/img/img-order-list/img_edit.png" alt="Espátula">
+                                        </button>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button class="tbody__style-img-advance">
+                                            <img src="/assets/img/img-order-list/img_delivered_order.png"
+                                                alt="Avançar pedido">
+                                        </button>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <button class="tbody__style-img-trash">
+                                            <img src="/assets/img/img-order-list/img_trash.png" alt="Lixeira">
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+                                <!-- <tr>
+                                    <td>Siriguejo</td>
+                                    <td>Em preparação</td>
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-edit" src="/assets/img/img-order-list/img_edit.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-advance" src="/assets/img/img-order-list/img_advance.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-trash" src="/assets/img/img-order-list/img_trash.png" alt="">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sandy Bochechas</td>
+                                    <td>Novo</td>
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-edit" src="/assets/img/img-order-list/img_edit.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-advance" src="/assets/img/img-order-list/img_advance.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-trash" src="/assets/img/img-order-list/img_trash.png" alt="">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lula Molusco</td>
+                                    <td>Em preparação</td>
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-edit" src="/assets/img/img-order-list/img_edit.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-advance" src="/assets/img/img-order-list/img_advance.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-trash" src="/assets/img/img-order-list/img_trash.png" alt="">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Plankton</td>
+                                    <td>Entregue</td>
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-edit" src="/assets/img/img-order-list/img_edit.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-advance" src="/assets/img/img-order-list/img_advance.png" alt="">
+                                    </td>
+
+                                    <td class="text-center">
+                                        <img class="tbody__style-img-trash" src="/assets/img/img-order-list/img_trash.png" alt="">
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="section-table__total-qty">
+                        <p>
+                            Total de Pedidos: <span>100</span>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>

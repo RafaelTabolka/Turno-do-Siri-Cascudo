@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<header>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            <div>                
+                <a class="navbar-brand" href="#">
+                    <img class="img-logo" src="/assets/img/img-navbar/img_logo.png" alt="">
+                </a>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <img class="navbar-toggler__menu-hamburguer" src="/assets/img/img-navbar/img_menu_hamburguer.png" alt="">
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mt-2 mt-sm-0 mb-sm-0">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="/order/list">Pedidos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="/order/register">Cadastrar Pedido</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login"><i class="bi bi-arrow-left"></i> Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

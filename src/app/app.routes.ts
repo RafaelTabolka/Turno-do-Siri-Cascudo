@@ -10,27 +10,28 @@ export const routes: Routes = [
     {
         path: 'login',
         loadComponent: () => import('./pages/login/login.component')
-        .then((l) => l.LoginComponent)
+        .then((m) => m.LoginComponent)
     },
     {
-        path: '',
+        path: 'order',
         component: AppLayoutComponent,
         children: [
             {
-                path: 'order-list',
-                loadComponent: () => import('./pages/order-list/order-list.component')
-                .then((ol) => ol.OrderListComponent)
+                path: 'list',
+                loadComponent: () => import('./pages/order/list/list.component')
+                .then((m) => m.ListComponent)
             },
             {
-                path: 'order-details',
-                loadComponent: () => import('./pages/order-details/order-details.component')
-                .then((od) => od.OrderDetailsComponent)
+                path: 'list/:id',
+                loadComponent: () => import('./pages/order/details/details.component')
+                .then((m) => m.DetailsComponent)
+            },
+            {
+                path: 'register',
+                loadComponent: () => import('./pages/order/register/register.component')
+                .then((m) => m.RegisterComponent)
             }
         ]
-    },
-    {
-        path: 'order-details',
-        loadComponent: () => import('./pages/order-details/order-details.component').then((od) => od.OrderDetailsComponent)
     },
 
     {path: '**', redirectTo: 'login'}
