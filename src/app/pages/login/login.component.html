@@ -1,27 +1,52 @@
 <main tabindex="-1">
     <div class="container-fluid">
         <section class="section-form">
-            <form>
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
                 <img class="img-fluid" src="/assets/img/img-login/img_logo.png" alt="">
-                
+
                 <fieldset class="fieldset mt-1">
                     <legend class="fieldset__legend">Entre para acessar o painel de pedidos</legend>
                     
+                    @if (hasNotLogin) {
+                        <span class="error-login text-danger mt-1">Usuário ou senha incorretos</span>
+                    }
+
                     <div class="fieldset__field-style form-floating mb-4 mt-4">
-                        <input type="text" class="form-control" id="userName" name="userName" placeholder="Ex: Bob Esponja">
+                        <input type="text" class="form-control" id="userName" name="userName"
+                            placeholder="Ex: Bob Esponja" formControlName="name">
                         <label for="userName">Usuário</label>
+
+                        @if (formLogin.controls.name.touched && formLogin.controls.name.invalid) {
+                            <span class="text-danger small mt-1">Preencha o campo nome</span>
+                        }
                     </div>
-    
+
                     <div class="fieldset__field-style form-floating">
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Digite sua senha" formControlName="password">
                         <label for="password">Senha</label>
+
+                        @if (formLogin.controls.password.touched && formLogin.controls.password.invalid) {
+                            <span class="text-danger small mt-1">Preencha o campo nome</span>
+                        }
+
                     </div>
-    
+                    
                     <div class="fieldset__button mt-4">
-                        <button type="button" routerLink="/order/list" class="btn">Entrar</button>
+                        <button [disabled]="formLogin.invalid || onSubmited" type="submit" class="btn">
+                            @if (!onSubmited) {                                
+                                Entrar
+                            }
+                            
+                            @if (onSubmited) {
+                                <div class="teste spinner-border text-warning" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            }
+                        </button>
                     </div>
                 </fieldset>
-            </form>    
+            </form>
         </section>
 
         <p class="copy-right">&copy; 2026 Turno do Siri Cascudo</p>

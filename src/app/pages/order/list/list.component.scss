@@ -1,13 +1,11 @@
 // Common styles
 .col-12 {
-    // outline: 1px solid red;
     margin-top: 16px;
 }
 
 .container>h2 {
     margin: 0;
     text-align: center;
-    // font-size: 1.7rem;
     margin-top: 32px;
     font-weight: 700;
 }
@@ -26,17 +24,11 @@
     text-align: center;
     font-size: 3.5rem;
     font-weight: 500;
-    // color: #CDAA18;
 }
 
 .cards-row__article {
-    // outline: 1px solid red;
     outline: 3px solid rgba(192, 219, 230, .95);
     background: rgba(255, 255, 255, .94);
-    // box-shadow:
-    //     0 26px 70px rgba(11, 42, 82, .30),
-    //     /* sombra grande */
-    //     0 10px 22px rgba(11, 42, 82, .18);
     padding: 16px;
     border-radius: 12px;
 }
@@ -69,20 +61,10 @@
 @media (width >=768px) {
     .cards-row__card {
         display: flex;
-        // justify-content: center;
-        // outline: 4px solid red;
     }
 
     .cards-row__article {
-        // display: flex;
-        // flex-direction: column;
-        // height: 150px;
         width: 100%;
-    }
-
-    .cards-row__article p {
-        // // outline: 1px solid red;
-        // margin-top: auto;
     }
 }
 
@@ -171,26 +153,18 @@
     color: #212529;
 }
 
-// .table-responsive {
-//     outline: 1px solid red;
-// }
-
 thead,
 tbody {
     text-align: center;
 }
 
 .table {
-    // border: 1px solid #C0DBE6;
-    // border-radius: 12px;
     margin: 0;
 }
 
 .table-responsive {
     border: 1px solid #C0DBE6;
-    // border: 1px solid red;
     border-radius: 12px;
-    // margin: 0;
 }
 
 .tbody__style-img-edit,
@@ -226,51 +200,50 @@ tbody {
     color: #C0DBE6;
 }
 
+.section-table__container-bottom nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .section-table__total-qty {
     text-align: center;
     color: #0B2A52;
     font-weight: 500;
     background-color: rgba(217, 243, 255, .75);
     outline: 2px solid rgba(255, 255, 255, .94);
-    // max-width: 250px;
-    // margin: 0 auto;
     font-size: 1.2rem;
     padding: 8px;
     border-radius: 12px;
     box-shadow: inset 0 -10px 18px rgba(11, 42, 82, .10);
-    // font-weight: 600;
-    // outline: 1px solid red;
-    margin-top: 16px;
+    margin: 16px 0;
 }
 
 .section-table__total-qty p {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     margin: 0;
 }
 
 .section-table__total-qty span {
-    // outline: 1px solid red;
     color: #2C71C4;
     font-weight: 700;
     font-size: 1.4rem;
 }
 
-@media (width >=768px) {
-    .section-table__total-qty {
-        // margin: 0;
-        // display: flex;
-        // outline: 1px solid red;
-        // flex-direction: row;
-        // outline: 1px solid red;
-        width: 250px;
-    }
-}
-
 @media (width >=992px) {
+    .section-table__container-bottom {
+        display: flex;
+        gap: 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 16px 0;
+    }
+
     .section-table__total-qty {
-        // padding: 8px 16px;
-        // flex-direction: row;
+        width: 250px;
+        margin: 0;
+    }
+
+    .pagination {
+        margin: 0;
     }
 }
