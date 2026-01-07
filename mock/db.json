@@ -1,0 +1,53 @@
+{
+  "orders": [
+    {
+      "id": "c7b9e1a2-3f4d-4c2a-9a6d-2b1baf3c0c11",
+      "client": "Patrick Estrela",
+      "status": "entregue",
+      "item": "Hambúrguer de Siri",
+      "qty": 2,
+      "notes": "Quero sem picles e com bastante ketchup"
+    },
+    {
+      "id": "1a6f2b9c-8d31-4b50-8c2c-9f2d18c8b5c4",
+      "client": "Sandy Bochechas",
+      "status": "novo",
+      "item": "Hambúrguer de Siri",
+      "qty": 1,
+      "notes": "Por favor, caprichar na alface"
+    },
+    {
+      "id": "9b2a1d7e-6c4f-4f1a-9a12-3c7b5d8e1a90",
+      "client": "Plankton",
+      "status": "preparando",
+      "item": "Refrigerante Gelado",
+      "qty": 1,
+      "notes": "Quero bem gelado, mas não pergunta o motivo"
+    },
+    {
+      "id": "2f8c6a1b-7d2e-4a2c-8f5a-1c9e6b2d7a33",
+      "client": "Gary",
+      "status": "entregue",
+      "item": "Hambúrguer de Siri",
+      "qty": 1,
+      "notes": "Miau (sem cebola)"
+    }
+  ],
+  "users": [
+    {
+      "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "name": "Bob Esponja",
+      "password": "Bob@2026A"
+    },
+    {
+      "id": "f6e5d4c3-b2a1-4c9d-8e7f-1a2b3c4d5e6f",
+      "name": "Lula Molusco",
+      "password": "Lula@2026A"
+    },
+    {
+      "id": "0f1e2d3c-4b5a-4c6d-8e9f-a1b2c3d4e5f6",
+      "name": "Seu Sirigueijo",
+      "password": "Siri@2026A"
+    }
+  ]
+}

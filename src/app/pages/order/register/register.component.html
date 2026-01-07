@@ -11,18 +11,20 @@
 
                         <div class="form__field-style mb-3">
                             <label for="clientName" class="form-label">Nome Cliente</label>
-                            <input type="text" class="form-control" id="clientName" name="clientName">
+                            <input type="text" class="form-control" id="clientName" name="clientName"
+                                placeholder="Ex: Bob Esponja">
                         </div>
 
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form__field-style mb-3">
                                     <label for="orderStatus" class="form-label">Status do Pedido</label>
-                                    <select class="form-select" id="orderStatus" name="orderStatus" aria-label="Status do Pedido">
+                                    <select class="form-select" id="orderStatus" name="orderStatus"
+                                        aria-label="Status do Pedido">
                                         <option selected disabled>Selecione</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        <option value="novo">Novo</option>
+                                        <option value="preparando">Preparando</option>
+                                        <option value="entregue">Entregue</option>
                                     </select>
                                 </div>
                             </div>
@@ -39,7 +41,8 @@
                             <div class="col-12 col-md-9">
                                 <div class="form__field-style mb-3">
                                     <label for="orderItem" class="form-label">Item</label>
-                                    <select class="form-select" id="orderItem" name="orderItem" aria-label="Item do Pedido">
+                                    <select class="form-select" id="orderItem" name="orderItem"
+                                        aria-label="Item do Pedido">
                                         <option selected disabled>Selecione</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -51,14 +54,16 @@
                             <div class="col-12 col-md-3">
                                 <div class="form__field-style mb-3">
                                     <label for="createdIn" class="form-label">Qtde</label>
-                                    <input type="number" class="form-control" id="createdIn" name="createdIn">
+                                    <input type="number" class="form-control" id="createdIn" name="createdIn"
+                                        placeholder="Ex: 2">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form__field-style mb-3">
                             <label for="observations" class="form-label">Observações</label>
-                            <textarea class="form-control" id="observations" name="observations" rows="3"></textarea>
+                            <textarea class="form-control" id="observations" name="observations" rows="3"
+                                placeholder="Ex: Um hamburuger de sirí sem picles"></textarea>
                         </div>
 
                         <div class="form__button mt-2">

@@ -1,7 +1,6 @@
 .container>h2 {
     margin: 0;
     text-align: center;
-    // font-size: 1.7rem;
     font-weight: 700;
     margin-top: 32px;
 }
@@ -48,13 +47,7 @@
 .form__button {
     text-align: center;
     display: flex;
-    // flex-direction: column;
     justify-content: center;
-    // align-items: center;
-}
-
-.btn-edit,
-.btn-delete {
 }
 
 .btn-edit {
@@ -75,33 +68,16 @@
     margin-bottom: 16px;
 }
 
-// .btn-delete {
-//     background-color: #A93226;
-// }
-
 .btn-edit:hover,
 .btn-edit:focus-visible {
     transform: translateY(-2px);
     outline-color: rgba(253, 240, 100, 0.7); // Como já tem 3px em .btn, aqui continua sendo 3px solid
 }
 
-// .btn-delete:hover,
-// .btn-delete:focus-visible {
-//     background-color: #C0392B;
-//     outline-color: rgba(253, 240, 100, 0.7);
-//     transform: translateY(-1px);
-// }
-
 @media (width >=768px) {
     .section-form {
         max-width: 700px;
         margin: 0 auto;
-    }
-
-    .form__button {
-        // flex-direction: row;
-        // gap: 16px;
-        // justify-content: flex-end;
     }
 
     .btn-edit {
