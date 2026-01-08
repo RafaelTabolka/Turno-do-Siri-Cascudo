@@ -108,6 +108,8 @@
 .form__button {
     text-align: center;
     display: flex;
+    flex-direction: column;
+    gap: 16px;
     justify-content: center;
     align-items: center;
 }
@@ -119,20 +121,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2C71C4;
-    outline: 3px solid #C0DBE6;
-    color: white;
     border-radius: 12px;
     font-weight: 600;
     box-shadow:
         0 12px 22px rgba(11, 42, 82, .28);
     transition: 0.2s;
+    border: none;
+    outline: none;
+}
+
+.btn-make-filters {
+    background-color: #2C71C4;
+    outline: 3px solid #C0DBE6;
+    color: white;
 }
 
 .btn:hover,
 .btn:focus-visible {
     transform: translateY(-2px);
-    outline-color: rgba(253, 240, 100, 0.7); // Como já tem 3px em .btn, aqui continua sendo 3px solid
+    outline: 3px solid rgba(253, 240, 100, 0.7); // Como já tem 3px em .btn, aqui continua sendo 3px solid
+}
+
+@media (width >=1200px) {
+    .form__button {
+        flex-direction: row;
+    }
 }
 
 // Table
@@ -246,4 +259,9 @@ tbody {
     .pagination {
         margin: 0;
     }
+}
+
+// Pagination
+.page-link {
+    cursor: pointer;
 }

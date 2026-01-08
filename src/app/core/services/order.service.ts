@@ -32,4 +32,8 @@ export class OrderService {
 
     return this.http.patch<Order>(`${this.baseUrl}/${id}`, body); // Não pode passar como corpo da requisição o status. O corpo espera um objeto para que possa atualizar, se mandar o status vira somente uma string e o patch, put e register esperam um corpo de requisição
   }
+
+  public deleteOrder(id: string): Observable<Order> {
+    return this.http.delete<Order>(`${this.baseUrl}/${id}`);
+  }
 }
