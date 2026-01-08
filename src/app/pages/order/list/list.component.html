@@ -31,18 +31,28 @@
             <!-- Filters -->
             <div class="col-12 col-md-5 col-lg-4">
                 <section class="section-form">
-                    <form class="form">
+                    <form [formGroup]="formFilter" class="form">
                         <h2 class="form__h2">Filtros</h2>
 
                         <div class="form__field-style mb-3">
                             <label for="clientName" class="form-label">Nome Cliente</label>
-                            <input type="text" class="form-control" id="clientName" name="clientName"
+                            <input 
+                            type="text" 
+                            class="form-control" 
+                            id="clientName" 
+                            name="clientName"
+                            formControlName="clientName"
                                 placeholder="Ex: Patrick">
                         </div>
 
                         <div class="form__field-style">
-                            <label for="order-status" class="form-label">Status do Pedido</label>
-                            <select class="form-select" aria-label="Status do Pedido">
+                            <label for="orderStatus" class="form-label">Status do Pedido</label>
+                            <select 
+                            class="form-select" 
+                            id="orderStatus" 
+                            name="orderStatus" 
+                            aria-label="Status do Pedido"
+                            formControlName="orderStatus">
                                 <option selected disabled>Selecione</option>
                                 <option value="novo">Novo</option>
                                 <option value="preparando">Preparando</option>
@@ -51,7 +61,8 @@
                         </div>
 
                         <div class="form__button mt-4">
-                            <button class="btn ">Aplicar Filtros</button>
+                            <button class="btn btn-make-filters" [disabled]="formFilter.invalid" (click)="makeFilters()">Aplicar Filtros</button>
+                            <button class="btn btn-secondary" [disabled]="formFilter.invalid" (click)="clearFilters()">Limpar Filtros</button>
                         </div>
                     </form>
                 </section>
@@ -75,13 +86,13 @@
                             </thead>
 
                             <tbody class="table-group-divider">
-                                @for (order of orders; track order.id) {
+                                @for (order of showItensPerPage(); track order.id) {
                                     <tr>
                                         <td>{{ order.client }}</td>
                                         <td>{{ order.status }}</td>
     
                                         <td class="text-center">
-                                            <button routerLink="/order/list/1" type="button" class="tbody__style-img-edit">
+                                            <button [routerLink]="['/order/list/', order.id]" type="button" class="tbody__style-img-edit">
                                                 <img src="/assets/img/img-order-list/img_edit.png" alt="Espátula ">
                                             </button>
                                         </td>
@@ -93,60 +104,12 @@
                                         </td>
     
                                         <td class="text-center">
-                                            <button class="tbody__style-img-trash">
+                                            <button class="tbody__style-img-trash" (click)="deleteOrder(order)">
                                                 <img src="/assets/img/img-order-list/img_trash.png" alt="">
                                             </button>
                                         </td>
                                     </tr>
                                 }
-
-                                <!-- <tr>
-                                    <td>Siriguejo</td>
-                                    <td>Preparando</td>
-
-                                    <td class="text-center">
-                                        <button routerLink="/order/list/2" type="button" class="tbody__style-img-edit">
-                                            <img src="/assets/img/img-order-list/img_edit.png" alt="Espátula">
-                                        </button>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <button class="tbody__style-img-advance">
-                                            <img src="/assets/img/img-order-list/img_oder_in_preparation.png"
-                                                alt="Avançar pedido">
-                                        </button>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <button class="tbody__style-img-trash">
-                                            <img src="/assets/img/img-order-list/img_trash.png" alt="Lixeira">
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Sandy Bochechas</td>
-                                    <td>Entregue</td>
-
-                                    <td class="text-center">
-                                        <button routerLink="/order/list/3" type="button" class="tbody__style-img-edit">
-                                            <img src="/assets/img/img-order-list/img_edit.png" alt="Espátula">
-                                        </button>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <button class="tbody__style-img-advance">
-                                            <img src="/assets/img/img-order-list/img_delivered_order.png"
-                                                alt="Avançar pedido">
-                                        </button>
-                                    </td>
-
-                                    <td class="text-center">
-                                        <button class="tbody__style-img-trash">
-                                            <img src="/assets/img/img-order-list/img_trash.png" alt="Lixeira">
-                                        </button>
-                                    </td>
-                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -158,28 +121,23 @@
                             </p>
                         </div>
 
+                        <!-- Pagination -->
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
+                                <li class="page-item" [class.disabled]="page === 1">
+                                    <a class="page-link" aria-label="Previous" (click)="goToPage(page - 1)">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
 
-                                <li class="page-item">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
+                                @for (p of pages(); track p) {
+                                    <li class="page-item" [class.active]="p === page">
+                                        <a class="page-link" (click)="goToPage(p)">{{ p }}</a>
+                                    </li>
+                                }
 
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
+                                <li class="page-item" [class.disabled]="page === totalPages()">
+                                    <a class="page-link" aria-label="Next" (click)="goToPage(page + 1)">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
                                 </li>

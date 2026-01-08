@@ -7,4 +7,7 @@ export interface Order {
     item: string,
     qty: number,
     notes?: string;
+    createdIn: Date;
+    createdBy: { id: string, name: string };
+    updatedBy: { id: string, name: string } | null;
 }

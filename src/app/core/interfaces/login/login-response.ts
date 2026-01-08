@@ -1,4 +1,5 @@
 export interface ILoginResponse {
-    accessToken: string;
+    id: string;
     userName: string
+    accessToken: string;
 }

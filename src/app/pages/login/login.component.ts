@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
-import { LoginService } from '../../core/services/login.service';
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ILoginResponse } from '../../core/interfaces/login/login-response';
+import { UserService } from '../../core/services/user.service';
+import { IGetUserResponse } from '../../core/interfaces/user/get-user-response';
 
 @Component({
   selector: 'app-login',
@@ -11,21 +12,22 @@ import { ILoginResponse } from '../../core/interfaces/login/login-response';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  public readonly formLogin: FormGroup<{
+  readonly formLogin: FormGroup<{
     name: FormControl<string>;
     password: FormControl<string>;
   }>;
 
-  public onSubmited: boolean = false;
-  public hasNotLogin: boolean = false;
+  onSubmited: boolean = false;
+  hasNotLogin: boolean = false;
 
   private iloginResponse: ILoginResponse = {
-    accessToken: '',
-    userName: ''
+    id: '',
+    userName: '',
+    accessToken: ''
   };
 
   constructor(
-    private loginService: LoginService,
+    private userService: UserService,
     private router: Router,
     private fb: NonNullableFormBuilder) {
     this.formLogin = this.fb.group({
@@ -34,7 +36,7 @@ export class LoginComponent {
     });
   }
 
-  public onSubmit(): void {
+  onSubmit(): void {
     if (this.formLogin.invalid) {
       return;
     }
@@ -42,13 +44,14 @@ export class LoginComponent {
     this.onSubmited = true;
     this.hasNotLogin = false;
 
-    this.loginService.getUsers().subscribe({
-      next: (users) => {
+    this.userService.getUsers().subscribe({
+      next: (users: IGetUserResponse[]) => {
         const matchUser = users.find((user) => user.name === this.formLogin.value.name?.trim() && user.password === this.formLogin.value.password?.trim());
 
         if (matchUser !== undefined) {
-          this.iloginResponse.accessToken = 'eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJib2ItZXNwb25qYSIsIm5hbWUiOiJCb2IgRXNwb25qYSIsInJvbGUiOiJmdW5jaW9uYXJpbyIsImV4cCI6MTgwMDAwMDAwMH0.fake';
+          this.iloginResponse.id = matchUser.id;
           this.iloginResponse.userName = matchUser.name;
+          this.iloginResponse.accessToken = 'eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJzdWIiOiJib2ItZXNwb25qYSIsIm5hbWUiOiJCb2IgRXNwb25qYSIsInJvbGUiOiJmdW5jaW9uYXJpbyIsImV4cCI6MTgwMDAwMDAwMH0.fake';
 
           localStorage.setItem('accessToken', this.iloginResponse.accessToken);
           localStorage.setItem('name', this.iloginResponse.userName);
@@ -60,7 +63,7 @@ export class LoginComponent {
         }
       },
 
-      error: (err) => {
+      error: () => {
         alert('Deu ruim no servidor')
         this.onSubmited = false;
       }
