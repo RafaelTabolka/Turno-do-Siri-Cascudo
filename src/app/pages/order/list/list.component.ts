@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { OrderService } from '../../../core/services/order.service';
-import { OrderStatus } from '../../../core/models/order-status.enum';
-import { Order } from '../../../core/models/order';
+import { OrderStatus } from '../../../core/interfaces/models/order/order-status.enum';
 import { NgbModal, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmComponent } from '../../../components/modal/confirm/confirm.component';
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IOrder } from '../../../core/interfaces/models/order/order';
 
 @Component({
   selector: 'app-list',
@@ -37,12 +37,12 @@ export class ListComponent implements OnInit {
     orderStatus: FormControl<string>;
   }>;
 
-  orders: Order[] = [];
-  allOrders: Order[] = [];
+  orders: IOrder[] = [];
+  allOrders: IOrder[] = [];
   totalOrders: number = 0;
 
   page: number = 1;
-  pageSize: number = 2;
+  pageSize: number = 3;
 
   constructor(
     private orderService: OrderService,
@@ -57,7 +57,6 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getAllOrders().subscribe({
       next: (ordersResponse) => {
-
         this.orders = ordersResponse;
         this.allOrders = ordersResponse;
 
@@ -94,11 +93,11 @@ export class ListComponent implements OnInit {
     this.countTotalOrders();
   }
 
-  changeStatus(order: Order): void {
+  changeStatus(order: IOrder): void {
     const oldStatus: OrderStatus = order.status;
     const newStatus: OrderStatus = this.nextStatus[order.status];
 
-    this.orderService.updateOrderStatus(order.id, newStatus).subscribe({
+    this.orderService.updateOrderStatus(order, newStatus).subscribe({
       next: () => {
         order.status = newStatus;
 
@@ -112,7 +111,7 @@ export class ListComponent implements OnInit {
 
   }
 
-  deleteOrder(orderParam: Order): void {
+  deleteOrder(orderParam: IOrder): void {
     const modalRef = this.modal.open(ConfirmComponent, { centered: true, backdrop: 'static' });
 
     modalRef.componentInstance.title = 'Excluir pedido';
@@ -125,9 +124,8 @@ export class ListComponent implements OnInit {
           return;
         }
 
-        this.orderService.deleteOrder(orderParam.id).subscribe({
+        this.orderService.deleteOrder(orderParam).subscribe({
           next: () => {
-            // this.ngOnInit();
             this.orders = this.orders.filter((order) => order.id !== orderParam.id);
             this.recalcSummary();
             this.fixPage();
@@ -144,7 +142,7 @@ export class ListComponent implements OnInit {
     const clientName: string = (this.formFilter.controls.clientName.value ?? '').trim().toLocaleLowerCase();
     const orderStatus: string = this.formFilter.controls.orderStatus.value ?? '';
 
-    this.orders = this.allOrders.filter((order: Order) => {
+    this.orders = this.allOrders.filter((order: IOrder) => {
       const matchName: boolean = clientName === '' || order.client.toLocaleLowerCase().includes(clientName);
       const matchStatus: boolean = orderStatus === '' || order.status === orderStatus;
       return matchName && matchStatus;
@@ -173,7 +171,7 @@ export class ListComponent implements OnInit {
     return pages === 0 ? 1 : pages;
   }
 
-  showItensPerPage(): Order[] {
+  showItensPerPage(): IOrder[] {
     let start: number = 0;
     let i: number = 1;
 

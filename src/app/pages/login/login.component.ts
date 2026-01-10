@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ILoginResponse } from '../../core/interfaces/login/login-response';
+import { ILoginResponse } from '../../core/interfaces/models/login/login-response';
 import { UserService } from '../../core/services/user.service';
-import { IGetUserResponse } from '../../core/interfaces/user/get-user-response';
+import { IUser } from '../../core/interfaces/models/user/user';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +45,7 @@ export class LoginComponent {
     this.hasNotLogin = false;
 
     this.userService.getUsers().subscribe({
-      next: (users: IGetUserResponse[]) => {
+      next: (users: IUser[]) => {
         const matchUser = users.find((user) => user.name === this.formLogin.value.name?.trim() && user.password === this.formLogin.value.password?.trim());
 
         if (matchUser !== undefined) {
@@ -55,6 +55,7 @@ export class LoginComponent {
 
           localStorage.setItem('accessToken', this.iloginResponse.accessToken);
           localStorage.setItem('name', this.iloginResponse.userName);
+          localStorage.setItem('id', this.iloginResponse.id);
 
           this.router.navigate(['/order/list'])
         } else {

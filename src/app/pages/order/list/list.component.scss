@@ -145,6 +145,17 @@
 @media (width >=1200px) {
     .form__button {
         flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .btn-make-filters {
+        width: 45%;
+        font-size: 1.3rem;
+    }
+    
+    .btn-secondary {
+        width: 30%;
+        font-size: 1.3rem;
     }
 }
 

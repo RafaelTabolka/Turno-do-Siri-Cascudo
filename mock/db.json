@@ -3,8 +3,11 @@
     {
       "id": "c7b9e1a2-3f4d-4c2a-9a6d-2b1baf3c0c11",
       "client": "Patrick Estrela",
-      "status": "entregue",
-      "item": "Hambúrguer de Siri",
+      "status": "novo",
+      "item": {
+        "id": "c4b6f8a1-2d3e-4f50-9a1b-1c2d3e4f5a60",
+        "itemName": "Hambúrguer de Siri"
+      },
       "qty": 2,
       "notes": "Quero sem picles e com bastante ketchup",
       "createdIn": "2026-01-08",
@@ -12,13 +15,19 @@
         "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
         "name": "Bob Esponja"
       },
-      "updatedBy": null
+      "updatedBy": {
+        "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+        "name": "Bob Esponja"
+      }
     },
     {
       "id": "1a6f2b9c-8d31-4b50-8c2c-9f2d18c8b5c4",
       "client": "Sandy Bochechas",
       "status": "preparando",
-      "item": "Hambúrguer de Siri",
+      "item": {
+        "id": "c4b6f8a1-2d3e-4f50-9a1b-1c2d3e4f5a60",
+        "itemName": "Hambúrguer de Siri"
+      },
       "qty": 1,
       "notes": "Por favor, caprichar na alface",
       "createdIn": "2026-01-07",
@@ -32,7 +41,10 @@
       "id": "9b2a1d7e-6c4f-4f1a-9a12-3c7b5d8e1a90",
       "client": "Plankton",
       "status": "novo",
-      "item": "Refrigerante Gelado",
+      "item": {
+        "id": "a1d2c3b4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+        "itemName": "Refrigerante Gelado"
+      },
       "qty": 1,
       "notes": "Quero bem gelado, mas não pergunta o motivo",
       "createdIn": "2026-01-06",
@@ -45,8 +57,11 @@
     {
       "id": "2f8c6a1b-7d2e-4a2c-8f5a-1c9e6b2d7a33",
       "client": "Gary",
-      "status": "preparando",
-      "item": "Hambúrguer de Siri",
+      "status": "entregue",
+      "item": {
+        "id": "c4b6f8a1-2d3e-4f50-9a1b-1c2d3e4f5a60",
+        "itemName": "Hambúrguer de Siri"
+      },
       "qty": 1,
       "notes": "Miau (sem cebola)",
       "createdIn": "2026-01-08",
@@ -55,6 +70,153 @@
         "name": "Bob Esponja"
       },
       "updatedBy": null
+    },
+    {
+      "id": "e2c1a0b9-7d6e-4f5a-9b8c-1d2e3f4a5b6c",
+      "client": "Sra. Puff",
+      "status": "novo",
+      "item": {
+        "id": "f0e1d2c3-b4a5-4c6d-8e9f-a1b2c3d4e5f6",
+        "itemName": "Batata do Siri Cascudo"
+      },
+      "qty": 2,
+      "notes": "Bem crocante e com bastante sal",
+      "createdIn": "2026-01-08",
+      "createdBy": {
+        "id": "0f1e2d3c-4b5a-4c6d-8e9f-a1b2c3d4e5f6",
+        "name": "Seu Sirigueijo"
+      },
+      "updatedBy": null
+    },
+    {
+      "id": "a7f3b2c1-4d5e-4a6b-8c9d-0e1f2a3b4c5e",
+      "client": "Perch Perkins",
+      "status": "preparando",
+      "item": {
+        "id": "7c6b5a4f-3e2d-4c1b-8a9f-0e1d2c3b4a5f",
+        "itemName": "Porção de Anéis de Lula"
+      },
+      "qty": 1,
+      "notes": "Sem molho, por favor",
+      "createdIn": "2026-01-07",
+      "createdBy": {
+        "id": "f6e5d4c3-b2a1-4c9d-8e7f-1a2b3c4d5e6f",
+        "name": "Lula Molusco"
+      },
+      "updatedBy": null
+    },
+    {
+      "id": "c9d8e7f6-1a2b-4c3d-8e9f-0a1b2c3d4e5a",
+      "client": "Mermaid Man",
+      "status": "entregue",
+      "item": {
+        "id": "0a1b2c3d-4e5f-4a6b-8c9d-1e2f3a4b5c6d",
+        "itemName": "Combo Bob Esponja"
+      },
+      "qty": 1,
+      "notes": "Caprichar no guardanapo, herói come rápido",
+      "createdIn": "2026-01-06",
+      "createdBy": {
+        "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+        "name": "Bob Esponja"
+      },
+      "updatedBy": null
+    },
+    {
+      "id": "5b4a3c2d-1e0f-4a9b-8c7d-6e5f4a3b2c1d",
+      "client": "Barnacle Boy",
+      "status": "preparando",
+      "item": {
+        "id": "3d4e5f60-1a2b-4c3d-8e9f-0a1b2c3d4e5f",
+        "itemName": "Milkshake de Coral"
+      },
+      "qty": 2,
+      "notes": "Um com pouco gelo e outro bem gelado",
+      "createdIn": "2026-01-08",
+      "createdBy": {
+        "id": "0f1e2d3c-4b5a-4c6d-8e9f-a1b2c3d4e5f6",
+        "name": "Seu Sirigueijo"
+      },
+      "updatedBy": null
+    },
+    {
+      "id": "1f2e3d4c-5b6a-4c7d-8e9f-0a1b2c3d4e5b",
+      "client": "Karen",
+      "status": "novo",
+      "item": {
+        "id": "1c2d3e4f-5a6b-4c7d-8e9f-0a1b2c3d4e5f",
+        "itemName": "Salada de Algas"
+      },
+      "qty": 1,
+      "notes": "Sem tempero e sem comentários",
+      "createdIn": "2026-01-07",
+      "createdBy": {
+        "id": "f6e5d4c3-b2a1-4c9d-8e7f-1a2b3c4d5e6f",
+        "name": "Lula Molusco"
+      },
+      "updatedBy": null
+    }
+  ],
+  "items": [
+    {
+      "id": "c4b6f8a1-2d3e-4f50-9a1b-1c2d3e4f5a60",
+      "itemName": "Hambúrguer de Siri"
+    },
+    {
+      "id": "a1d2c3b4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "itemName": "Refrigerante Gelado"
+    },
+    {
+      "id": "f0e1d2c3-b4a5-4c6d-8e9f-a1b2c3d4e5f6",
+      "itemName": "Batata do Siri Cascudo"
+    },
+    {
+      "id": "9b8a7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d",
+      "itemName": "Hambúrguer Duplo de Siri"
+    },
+    {
+      "id": "2a3b4c5d-6e7f-4a8b-9c0d-1e2f3a4b5c6d",
+      "itemName": "Hambúrguer de Siri com Queijo"
+    },
+    {
+      "id": "7c6b5a4f-3e2d-4c1b-8a9f-0e1d2c3b4a5f",
+      "itemName": "Porção de Anéis de Lula"
+    },
+    {
+      "id": "3d4e5f60-1a2b-4c3d-8e9f-0a1b2c3d4e5f",
+      "itemName": "Milkshake de Coral"
+    },
+    {
+      "id": "8e9f0a1b-2c3d-4e5f-9a0b-1c2d3e4f5a6b",
+      "itemName": "Suco de Água-Viva"
+    },
+    {
+      "id": "1c2d3e4f-5a6b-4c7d-8e9f-0a1b2c3d4e5f",
+      "itemName": "Salada de Algas"
+    },
+    {
+      "id": "6f5e4d3c-2b1a-4c9d-8e7f-1a2b3c4d5e6f",
+      "itemName": "Sobremesa de Algas Doces"
+    },
+    {
+      "id": "0a1b2c3d-4e5f-4a6b-8c9d-1e2f3a4b5c6d",
+      "itemName": "Combo Bob Esponja"
+    },
+    {
+      "id": "5c6d7e8f-0a1b-4c2d-8e9f-1a2b3c4d5e6f",
+      "itemName": "Combo Patrick"
+    },
+    {
+      "id": "4b5c6d7e-8f0a-4b1c-9d2e-3f4a5b6c7d8e",
+      "itemName": "Combo Lula Molusco"
+    },
+    {
+      "id": "d8c7b6a5-4f3e-4d2c-8b1a-0f9e8d7c6b5a",
+      "itemName": "Combo Seu Sirigueijo"
+    },
+    {
+      "id": "b1a2c3d4-e5f6-4b7c-8d9e-0f1a2b3c4d5e",
+      "itemName": "Água Mineral"
     }
   ],
   "users": [
