@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
+import { authGuard } from './core/guards/auth.guard';
+import { orderExistsGuard } from './core/guards/order-exists.guard';
 
 export const routes: Routes = [
     {
@@ -15,6 +17,7 @@ export const routes: Routes = [
     {
         path: 'order',
         component: AppLayoutComponent,
+        canMatch: [authGuard],
         children: [
             {
                 path: 'list',
@@ -24,7 +27,8 @@ export const routes: Routes = [
             {
                 path: 'list/:id',
                 loadComponent: () => import('./pages/order/details/details.component')
-                .then((m) => m.DetailsComponent)
+                .then((m) => m.DetailsComponent),
+                canActivate: [orderExistsGuard]
             },
             {
                 path: 'register',

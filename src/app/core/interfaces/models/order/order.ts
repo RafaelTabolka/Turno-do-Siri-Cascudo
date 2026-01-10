@@ -1,13 +1,13 @@
 import { OrderStatus } from "./order-status.enum";
 
-export interface Order {
-    id: string,
+export interface IOrder {
+    id?: string,
     client: string,
     status: OrderStatus,
-    item: string,
+    item: { id: string, itemName: string },
     qty: number,
     notes?: string;
-    createdIn: Date;
+    createdIn: string;
     createdBy: { id: string, name: string };
-    updatedBy: { id: string, name: string } | null;
+    updatedBy?: { id: string, name: string };
 }

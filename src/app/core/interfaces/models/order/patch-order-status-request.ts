@@ -1,4 +1,4 @@
-import { OrderStatus } from "../../models/order-status.enum";
+import { OrderStatus } from "./order-status.enum";
 
 export interface IPatchOrderStatusRequest {
     status: OrderStatus;

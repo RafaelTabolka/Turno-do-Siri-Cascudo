@@ -53,7 +53,7 @@
                             name="orderStatus" 
                             aria-label="Status do Pedido"
                             formControlName="orderStatus">
-                                <option selected disabled>Selecione</option>
+                                <option value="" disabled>Selecione...</option>
                                 <option value="novo">Novo</option>
                                 <option value="preparando">Preparando</option>
                                 <option value="entregue">Entregue</option>
@@ -61,8 +61,8 @@
                         </div>
 
                         <div class="form__button mt-4">
-                            <button class="btn btn-make-filters" [disabled]="formFilter.invalid" (click)="makeFilters()">Aplicar Filtros</button>
-                            <button class="btn btn-secondary" [disabled]="formFilter.invalid" (click)="clearFilters()">Limpar Filtros</button>
+                            <button class="btn btn-make-filters" [disabled]="formFilter.invalid" (click)="makeFilters()">Aplicar</button>
+                            <button class="btn btn-secondary" [disabled]="formFilter.invalid" (click)="clearFilters()">Limpar</button>
                         </div>
                     </form>
                 </section>
